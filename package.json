@@ -1,0 +1,32 @@
+{
+  "name": "repo-release-guard",
+  "version": "1.0.0",
+  "description": "Portable AI Skill and zero-dependency stdio MCP server for git worktree inspection, pre-release repository hygiene audits, and SemVer readiness checks.",
+  "main": "index.cjs",
+  "bin": {
+    "repo-release-guard-mcp": "./bin/mcp-server.cjs"
+  },
+  "scripts": {
+    "check": "node --check index.cjs && node --check bin/mcp-server.cjs && node --check lib/audit.cjs && node --check tests/repo-release-guard.test.cjs",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude-code",
+    "openbot",
+    "skill",
+    "git-worktree",
+    "release",
+    "security"
+  ],
+  "author": "Emerson Almeida <https://github.com/deusbr>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/deusbr/repo-release-guard.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
