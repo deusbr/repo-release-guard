@@ -1,5 +1,7 @@
 # repo-release-guard
 
+[![repo-release-guard MCP server](https://glama.ai/mcp/servers/@deusbr/repo-release-guard/badges/score.svg)](https://glama.ai/mcp/servers/@deusbr/repo-release-guard)
+
 [![CI](https://github.com/deusbr/repo-release-guard/actions/workflows/ci.yml/badge.svg)](https://github.com/deusbr/repo-release-guard/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18.0.0-339933?logo=node.js&logoColor=white)](package.json)
