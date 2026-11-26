@@ -6,21 +6,31 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node.js >= 18](https://img.shields.io/badge/node-%3E%3D18.0.0-339933?logo=node.js&logoColor=white)](package.json)
 
-Portable AI Skill (`SKILL.md`) and zero-dependency `stdio` **Model Context Protocol (MCP)** server for pre-release repository hygiene audits, `git worktree` inspection, and SemVer readiness checks.
+Portable AI Skill (`SKILL.md`), CLI, and zero-dependency `stdio` **Model Context Protocol (MCP)** server (supporting both NDJSON and `Content-Length` framing) for pre-release repository hygiene audits, `git worktree` inspection, and SemVer readiness checks.
 
-## Tools Exposed
+## Tools & Capabilities
 
-- `audit_repo_hygiene`: Verifies `README.md`, `LICENSE`, `.gitignore`, `.github/workflows/*.yml`, manifest metadata, and scans for accidental credential patterns without echoing secrets.
+- `audit_repo_hygiene`: Verifies `README.md`, `LICENSE`, `.gitignore`, `.github/workflows/*.yml`, manifest metadata (`package.json` / `pyproject.toml`), flags committed `.env` files (excluding `.env.example`/`.sample`/`.template`/`.dist`), and scans for accidental credential patterns (Private Keys, GitHub, OpenAI, Anthropic, AWS, Google/Gemini, Hugging Face, npm, Slack) without echoing secrets.
 - `list_worktrees`: Parses `git worktree list --porcelain` into structured JSON for multi-agent isolation.
 - `plan_release_tag`: Confirms SemVer tag alignment with `package.json` and working-tree cleanliness before tagging.
 
 ## Quick Start
 
+### CLI
+
+```bash
+node bin/repo-release-guard.cjs audit . --json
+node bin/repo-release-guard.cjs worktrees . --json
+node bin/repo-release-guard.cjs plan-tag . v1.1.0 --json
+```
+
+### MCP Server (`stdio`)
+
 ```bash
 node bin/mcp-server.cjs
 ```
 
-Or install via [`mcp-client-installer`](https://github.com/deusbr/mcp-client-installer) for Claude Code / Claude Desktop / Cursor.
+Or install via [`mcp-client-installer`](https://github.com/deusbr/mcp-client-installer) for Claude Code / Claude Desktop / Cursor / Codex / Gemini CLI.
 
 ## License
 
